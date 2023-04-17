@@ -58,8 +58,8 @@ let escolar3 = new Products ("lapiz", "negro", "$70", "30", "LPZ250", "")
 let escolar4 = new Products ()
 
 
-console.log(escolar)
-console.log(escolar1)
-console.log(escolar2)
-console.log(escolar3)
+console.log (escolar)
+console.log (escolar1)
+console.log (escolar2)
+console.log (escolar3)
 console.log (escolar4)
