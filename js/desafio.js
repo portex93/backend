@@ -1,34 +1,34 @@
 import { promises as fs } from 'fs'
 
 class ProductManager {
-    constructor (path) {
-        this.path = path
+    constructor () {
+        this.path = "./productos.txt"
         this.Products = []
               
     }
 
    async addProducts (Products) {
-        if (this.Products.find(producto => producto.code == Products.code)){
-            return ("Producto existente")
-        } else {
-            try { await fs.writeFile (ruta, JSON.stringify(Products))
-            await fs.readFile (ruta, 'utf-8')
-            this.Products.push(Products)
-            }  catch (error){
-            return error
-            } 
+    
+        await fs.writeFile (this.path, "hola")
+        if (this.Products.find (producto => producto.code == Products.code)){
 
+            
+
+            return ("productos existentes")
+            
+
+        } else {
+            
+            this.Products.push(Products)
         }
 
         
     }
 
 
+     async getProducts () {   
 
-     async getProducts () {
-        const products = await fs.readFile(this.path, 'utf-8')
-        const prods = JSON.parse(products)
-        console.log(prods)
+
     }
 
 
@@ -45,13 +45,13 @@ class ProductManager {
 
 
     async deleteProducts () {
+
         
     }  
 
 
 
     async updateProducts () {
-        
         
     }  
 }
@@ -86,10 +86,7 @@ const escolar2 = new Products ("goma de borrar", "blanca", "$50", "20", "GDB800"
 const escolar3 = new Products ("lapiz", "negro", "$70", "30", "LPZ250", "")
 const escolar4 = new Products ()
 
-const productManager = new ProductManager('./desafio.txt')
+const productManager = new ProductManager ()
 
-await productManager.getProducts()
 
-await productManager.addProducts()
 
-console.log(productManager)
